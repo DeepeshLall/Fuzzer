@@ -1,0 +1,5 @@
+Initially we installed afl fuzzer
+There after we wrote a simple program to take login name and password as the input.
+Then we defined three test cases.
+Then we tested with the help of afl and ran the program with many diverse inputs.
+We extracted different output in different categories such as crashes, succesful runs etc.
