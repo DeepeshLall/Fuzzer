@@ -1,0 +1,12 @@
+//text case 1
+srinjay
+Srsdjkhfkjsdhsdhfjkhdsfsdm,fhkjsdgf
+
+//test case 2
+root
+lqazxsm2
+
+
+//test case 3
+root
+bhsdgkfhdsgfjk;gf
