@@ -1,0 +1,130 @@
+// Commands as root user
+
+    1  ls
+    2  cd libxml/
+    3  ls
+    4  ./libxml2-v2.9.2-fsanitize_fuzzer  
+    5  ls
+    6  ./libxml2-v2.9.2-fsanitize_fuzzer  
+    7  ./libxml2-v2.9.2-fsanitize_fuzzer -dict=afl/dictionaries/xml.dict
+    8  ls
+    9  cat xml.dict 
+   10  ls
+   11  ls afl
+   12  ls afl/dictionaries/
+   13  file afl/dictionaries/xml.dict 
+   14  cat afl/dictionaries/xml.dict 
+   15  mkdir CORPUS
+   16  ./libxml2-v2.9.2-fsanitize_fuzzer -dict=afl/dictionaries/xml.dict -jobs=8 -workers=8 CORPUS
+   17  ls
+   18  file fuzz-0.log 
+   19  cat fuzz-0.log 
+   20  mkdir -p ~/openssl-1.0.2d; rm -rf ~/openssl-1.0.2d/*; cd ~/openssl-1.0.2d
+   21  ~/FTS/openssl-1.0.2d/build.sh
+   22  mkdir CORPUS; ./openssl-1.0.2d-fsanitize_fuzzer  -max_len=256 CORPUS -jobs=8 -workers=8
+   23  cd ..
+   24  mkdir -p ~/pcre2 ; rm -rf ~/pcre2/*; cd ~/pcre2
+   25  ~/FTS/pcre2-10.00/build.sh
+   26  mkdir CORPUS
+   27  ./pcre2-10.00-fsanitize_fuzzer -jobs=1000 -workers=8 CORPUS
+   28  history
+   29  cd ..
+   30  mkdir NEW_CORPPUS
+   31  ./your-fuzzer NEW_CORPUS OLD_CORPUS -merge=1
+   32  cd ..
+   33  cd ~/openssl-1.0.2d
+   34  ./openssl-1.0.2d-fsanitize_fuzzer   -minimize_crash=1 -runs=10000   ~/FTS/openssl-1.0.2d/crash-12ae1af0c82252420b5f780bc9ed48d3ba05109e
+   35  cd ..
+   36  svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk/lib/fuzzer Fuzzer
+   37  clang -fprofile-instr-generate -fcoverage-mapping ~/FTS/tutorial/fuzz_me.cc                                                   ~/Fuzzer/standalone/StandaloneFuzzTargetMain.c
+   38  mkdir CORPUS # Create an empty corpus dir.
+   39  echo -n A > CORPUS/A && ./a.out CORPUS/* &&              llvm-profdata merge -sparse *.profraw -o default.profdata &&              llvm-cov show a.out -instr-profile=default.profdata -name=FuzzMe
+   40  history
+
+
+//Commands as sudo
+
+ 2005  mkdir -p ~/heartbleed; rm -rf ~/heartbleed/*; cd ~/heartbleed
+ 2006  ~/FTS/openssl-1.0.1f/build.sh
+ 2007  cd ..
+ 2008  mkdir -p woff; cd woff;
+ 2009  ~/FTS/woff2-2016-05-06/build.sh
+ 2010  ./woff2-2016-05-06-fsanitize_fuzzer
+ 2011  mkdir MY_CORPUS
+ 2012  ./woff2-2016-05-06-fsanitize_fuzzer MY_CORPUS/ seeds/
+ 2013  ./woff2-2016-05-06-fsanitize_fuzzer MY_CORPUS/ seeds/ -jobs=8
+ 2014  cd ..
+ 2015  mkdir -p ~/libxml; rm -rf ~/libxml/*; cd ~/libxml
+ 2016  ~/FTS/libxml2-v2.9.2/build.sh
+ 2017  ./libxml2-v2.9.2-fsanitize_fuzzer 
+ 2018  ls
+ 2019  ~/FTS/libxml2-v2.9.2/build.sh
+ 2020  cd ..
+ 2021  sudo rm -rf libxml/
+ 2022  mkdir -p ~/libxml; rm -rf ~/libxml/*; cd ~/libxml
+ 2023  ~/FTS/libxml2-v2.9.2/build.sh
+ 2024  cd ..
+ 2025  mkdir -p ~/openssl-1.0.2d; rm -rf ~/openssl-1.0.2d/*; cd ~/openssl-1.0.2d
+ 2026  ~/FTS/openssl-1.0.2d/build.sh
+ 2027  cd ..
+ 2028  sudo apt-get install -y clang-6.0
+ 2029  ~/FTS/openssl-1.0.2d/build.sh
+ 2030  cd openssl-1.0.2d/
+ 2031  mkdir CORPUS; ./openssl-1.0.2d-fsanitize_fuzzer  -max_len=256 CORPUS -jobs=8 -workers=8
+ 2032  cd ..
+ 2033  mkdir CORPUS; ./openssl-1.0.2d-fsanitize_fuzzer  -max_len=256 CORPUS -jobs=8 -workers=8
+ 2034  mkdir -p ~/pcre2 ; rm -rf ~/pcre2/*; cd ~/pcre2
+ 2035  ~/FTS/pcre2-10.00/build.sh
+ 2036  mkdir CORPUS
+ 2037  ./pcre2-10.00-fsanitize_fuzzer -jobs=1000 -workers=8 CORPUS
+ 2038  cd ..
+ 2039  mkdir -p ~/libxml; rm -rf ~/libxml/*; cd ~/libxml
+ 2040  ~/FTS/libxml2-v2.9.2/build.sh
+ 2041  ls
+ 2042  cd BUILD
+ 2043  ls
+ 2044  cd ..
+ 2045  cd afl/
+ 2046  ls
+ 2047  cd ~
+ 2048  mkdir -p ~/libxml; rm -rf ~/libxml/*; cd ~/libxml
+ 2049  ls
+ 2050  cd ..
+ 2051  cd 
+ 2052  ls
+ 2053  ~/FTS/libxml2-v2.9.2/build.sh
+ 2054  ~/FTS/libxml2-v2.9.7/build.sh
+ 2055  cd FTS
+ 2056  ls
+ 2057  cd libxml2-v2.9.2/
+ 2058  ls
+ 2059  build.sh
+ 2060  cd ~
+ 2061  ~/FTS/libxml2-v2.9.7/build.sh
+ 2062  ~/FTS/libxml2-v2.9.2/build.sh
+ 2063  sudo apt-get install -y clang-6.0
+ 2064  ~/FTS/libxml2-v2.9.2/build.sh
+ 2065  cd FTS
+ 2066  ./libxml2-v2.9.2-fsanitize_fuzzer
+ 2067  ls
+ 2068  cd libxml2-v2.9.2/
+ 2069  ls
+ 2070  cd ~
+ 2071  mkdir -p ~/openssl-1.0.2d; rm -rf ~/openssl-1.0.2d/*; cd ~/openssl-1.0.2d
+ 2072  ~/FTS/openssl-1.0.2d/build.sh
+ 2073  cd ~
+ 2074  clang -g -O1 -fsanitize=fuzzer                         mytarget.c
+ 2075  cd Desktop/
+ 2076  clang -g -O1 -fsanitize=fuzzer                         mytarget.c
+ 2077  cd ..
+ 2078  mkdir NEW_CORPUS_DIR  # Store minimized corpus here.
+ 2079  ./my_fuzzer -merge=1 NEW_CORPUS_DIR FULL_CORPUS_DIR
+ 2080  cd Desktop/
+ 2081  clang -g -O1 -fsanitize=fuzzer                         mytarget.c
+ 2082  clang++ -g -O1 -fsanitize=fuzze mytarget.cpp
+ 2083  clang++ -g -O1 -fsanitize=fuzzer mytarget.cpp
+ 2084  clang -fsanitize=fuzzer-no-link mytarget.c
+ 2085  clang -g -O1 -fsanitize=fuzzer                         mytarget.c
+ 2086  cd ..
+ 2087  clang++ -g -fsanitize=address,fuzzer FTS/tutorial/fuzz_me.cc
+ 2088  history
