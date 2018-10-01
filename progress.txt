@@ -3,3 +3,9 @@ There after we wrote a simple program to take login name and password as the inp
 Then we defined three test cases.
 Then we tested with the help of afl and ran the program with many diverse inputs.
 We extracted different output in different categories such as crashes, succesful runs etc.
+
+
+Next we installed the libfuzzer with the help of documentation from https://github.com/google/fuzzer-test-suite 
+We then followed the steps mentioned ther ein the tutorials section and then implemented all the sections 
+We followed all the steps mentioned in this file https://github.com/google/fuzzer-test-suite/blob/master/tutorial/libFuzzerTutorial.md
+We installed lib fuzzer with clang and then implemented all the steps mentioned in the library
